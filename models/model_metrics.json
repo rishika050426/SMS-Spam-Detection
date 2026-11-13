@@ -1,0 +1,7 @@
+{
+    "Model": "Tuned Multinomial Naive Bayes",
+    "Accuracy": 98.07,
+    "Precision": 95.12,
+    "Recall": 89.31,
+    "F1 Score": 92.13
+}
