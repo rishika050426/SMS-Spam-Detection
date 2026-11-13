@@ -19,9 +19,50 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+/* Background */
+
 .stApp {
     background: linear-gradient(135deg, #f5f7ff, #edf2ff);
 }
+
+/* General Text Visibility */
+
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown li {
+    color: #263238 !important;
+}
+
+.stMarkdown h1,
+.stMarkdown h2,
+.stMarkdown h3,
+.stMarkdown h4 {
+    color: #263b80 !important;
+}
+
+/* Input Labels */
+
+label,
+.stTextArea label,
+.stSelectbox label {
+    color: #263238 !important;
+    font-weight: 600 !important;
+}
+
+/* Text Area */
+
+.stTextArea textarea {
+    color: #263238 !important;
+    background-color: #ffffff !important;
+}
+
+/* Dropdown */
+
+[data-testid="stSelectbox"] {
+    color: #263238 !important;
+}
+
+/* Main Title */
 
 .main-title {
     text-align: center;
@@ -31,12 +72,16 @@ st.markdown("""
     margin-bottom: 5px;
 }
 
+/* Subtitle */
+
 .subtitle {
     text-align: center;
-    color: #64748b;
+    color: #475569;
     font-size: 17px;
     margin-bottom: 30px;
 }
+
+/* Hero Banner */
 
 .hero {
     background: linear-gradient(120deg, #263b80, #6554c0);
@@ -48,14 +93,16 @@ st.markdown("""
 }
 
 .hero h2 {
-    color: white;
+    color: white !important;
     font-size: 29px;
 }
 
 .hero p {
-    color: #e0e7ff;
+    color: #ffffff !important;
     font-size: 16px;
 }
+
+/* Spam Result */
 
 .result-spam {
     background: #fff0f0;
@@ -66,6 +113,14 @@ st.markdown("""
     text-align: center;
 }
 
+.result-spam h2,
+.result-spam h4,
+.result-spam p {
+    color: #a4161a !important;
+}
+
+/* Ham Result */
+
 .result-ham {
     background: #e9fff2;
     border-left: 7px solid #16a34a;
@@ -74,6 +129,14 @@ st.markdown("""
     color: #166534;
     text-align: center;
 }
+
+.result-ham h2,
+.result-ham h4,
+.result-ham p {
+    color: #166534 !important;
+}
+
+/* Metric Cards */
 
 .metric-card {
     background: white;
@@ -90,9 +153,11 @@ st.markdown("""
 }
 
 .metric-label {
-    color: #64748b;
+    color: #475569;
     font-size: 14px;
 }
+
+/* Section Headings */
 
 .section-heading {
     color: #263b80;
@@ -100,11 +165,15 @@ st.markdown("""
     font-weight: 700;
 }
 
+/* Footer */
+
 .footer {
     text-align: center;
-    color: #64748b;
+    color: #475569;
     padding: 25px;
 }
+
+/* Button */
 
 div.stButton > button {
     background: linear-gradient(90deg, #3446a5, #6554c0);
@@ -141,7 +210,7 @@ def load_model():
 
 try:
     model = load_model()
-except Exception as e:
+except Exception:
     st.error("Unable to load the trained model. Please check the model file.")
     st.stop()
 
@@ -180,7 +249,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write("Enter an SMS message below to check whether it is Spam or Ham.")
+st.write(
+    "Enter an SMS message below to check whether it is Spam or Ham."
+)
 
 sample = st.selectbox(
     "Try an example message:",
@@ -212,6 +283,7 @@ if st.button("🔍 ANALYZE MESSAGE"):
         prediction = model.predict([message])[0]
 
         # Supports numeric and text labels
+
         is_spam = (
             str(prediction).strip().lower()
             in ["1", "spam", "true", "yes"]
@@ -254,7 +326,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write("Performance of the final tuned Multinomial Naive Bayes model.")
+st.write(
+    "Performance of the final tuned Multinomial Naive Bayes model."
+)
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -266,7 +340,9 @@ metrics = [
 ]
 
 for col, value, label in metrics:
+
     with col:
+
         st.markdown(f"""
         <div class="metric-card">
             <div class="metric-value">{value}</div>
@@ -289,20 +365,26 @@ st.markdown(
 col1, col2, col3 = st.columns(3)
 
 with col1:
+
     st.markdown("""
     ### 1️⃣ Enter Message
+
     Provide an SMS message that you want to analyze.
     """)
 
 with col2:
+
     st.markdown("""
     ### 2️⃣ ML Analysis
+
     The trained Machine Learning model analyzes the message.
     """)
 
 with col3:
+
     st.markdown("""
     ### 3️⃣ Get Result
+
     The system predicts whether the message is Spam or Ham.
     """)
 
