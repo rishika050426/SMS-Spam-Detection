@@ -14,222 +14,240 @@ st.set_page_config(
 )
 
 # ==========================================
-# CUSTOM CSS
+# CUSTOM CSS - MIDNIGHT NEON THEME
 # ==========================================
 
 st.markdown("""
 <style>
 
-/* Main Background */
+/* MAIN BACKGROUND */
 
 .stApp {
-    background: #f4f6fc;
+    background: linear-gradient(135deg, #0b1020, #151b35, #21183d);
+    color: #f8fafc;
 }
 
-/* General Text */
+/* GENERAL TEXT */
 
-.stApp,
 .stMarkdown,
 .stMarkdown p,
 .stMarkdown li {
-    color: #263247;
+    color: #e2e8f0 !important;
 }
 
 .stMarkdown h1,
 .stMarkdown h2,
 .stMarkdown h3,
 .stMarkdown h4 {
-    color: #263b80;
+    color: #f8fafc !important;
 }
 
-/* Header */
+/* HEADER */
 
 .header {
-    background: linear-gradient(120deg, #172554, #4338a8, #6d5ce7);
-    padding: 38px 25px;
-    border-radius: 20px;
+    background: linear-gradient(120deg, #312e81, #6d28d9, #0891b2);
+    padding: 42px 25px;
+    border-radius: 22px;
     text-align: center;
-    color: white;
-    margin-bottom: 28px;
-    box-shadow: 0 8px 25px rgba(50, 55, 130, 0.18);
+    margin-bottom: 30px;
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.3);
+    border: 1px solid rgba(255,255,255,0.15);
 }
 
 .header h1 {
     color: white !important;
-    font-size: 42px;
-    font-weight: 800;
+    font-size: 46px;
+    font-weight: 900;
     margin-bottom: 8px;
 }
 
 .header p {
-    color: #e0e7ff !important;
+    color: #e0f2fe !important;
     font-size: 17px;
 }
 
-/* Section Titles */
+/* SECTION TITLES */
 
 .section-title {
-    color: #243b80;
-    font-size: 25px;
+    color: #67e8f9 !important;
+    font-size: 26px;
     font-weight: 800;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 12px;
 }
 
-/* Metric Cards */
+/* METRIC CARDS */
 
 .metric-card {
-    background: white;
-    border-radius: 16px;
-    padding: 22px 12px;
+    background: linear-gradient(145deg, #202b49, #29204a);
+    border-radius: 18px;
+    padding: 24px 12px;
     text-align: center;
-    border: 1px solid #e5e9f5;
-    box-shadow: 0 5px 16px rgba(30, 50, 100, 0.06);
+    border: 1px solid #5541a5;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.metric-card:hover {
+    border-color: #22d3ee;
+    transform: translateY(-5px);
 }
 
 .metric-icon {
-    font-size: 27px;
+    font-size: 30px;
 }
 
 .metric-value {
-    color: #3949ab;
-    font-size: 30px;
-    font-weight: 800;
-    margin: 8px 0;
+    color: #67e8f9;
+    font-size: 32px;
+    font-weight: 900;
+    margin: 10px 0;
 }
 
 .metric-label {
-    color: #475569;
+    color: #e2e8f0;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-/* Analyzer Container */
-
-.analyzer-box {
-    background: white;
-    padding: 22px;
-    border-radius: 17px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 5px 18px rgba(30, 50, 100, 0.05);
-}
-
-/* Input Labels */
+/* INPUT LABELS */
 
 label,
 .stTextArea label,
 .stSelectbox label {
-    color: #263247 !important;
+    color: #f1f5f9 !important;
     font-weight: 700 !important;
 }
 
-/* Text Area */
+/* TEXT AREA */
 
 .stTextArea textarea {
-    background-color: white !important;
-    color: #172554 !important;
-    border: 1px solid #cbd5e1 !important;
-    border-radius: 12px !important;
+    background-color: #18233d !important;
+    color: white !important;
+    border: 1px solid #6366f1 !important;
+    border-radius: 14px !important;
     font-size: 15px !important;
 }
 
 .stTextArea textarea::placeholder {
-    color: #64748b !important;
+    color: #a5b4fc !important;
     opacity: 1 !important;
 }
 
-/* Select Box */
+/* DROPDOWN */
 
 [data-testid="stSelectbox"] > div > div {
-    background-color: white !important;
-    color: #172554 !important;
-    border-radius: 10px !important;
+    background-color: #18233d !important;
+    color: white !important;
+    border: 1px solid #6366f1 !important;
+    border-radius: 12px !important;
 }
 
 [data-testid="stSelectbox"] * {
-    color: #172554 !important;
+    color: white !important;
 }
 
-/* Buttons */
+/* BUTTON */
 
 div.stButton > button {
-    background: linear-gradient(90deg, #3949ab, #7059d9);
+    background: linear-gradient(90deg, #7c3aed, #0891b2);
     color: white !important;
-    border: none;
-    border-radius: 11px;
-    padding: 12px 20px;
-    font-weight: 700;
+    border: 1px solid #67e8f9;
+    border-radius: 13px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 800;
     width: 100%;
+    box-shadow: 0 0 20px rgba(34,211,238,0.2);
     transition: 0.3s;
 }
 
 div.stButton > button:hover {
-    background: linear-gradient(90deg, #283593, #5945c0);
+    background: linear-gradient(90deg, #6d28d9, #0e7490);
     color: white !important;
-    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(34,211,238,0.5);
 }
 
-/* Spam Result */
+/* SPAM RESULT */
 
 .spam-result {
-    background: #fff1f2;
-    border: 1px solid #fecdd3;
-    border-left: 7px solid #e11d48;
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(135deg, #451a2b, #7f1d35);
+    border: 1px solid #fb7185;
+    border-left: 7px solid #fb385f;
+    border-radius: 17px;
+    padding: 28px;
     text-align: center;
+    box-shadow: 0 0 25px rgba(244,63,94,0.2);
 }
 
 .spam-result h2,
 .spam-result p {
-    color: #9f1239 !important;
+    color: #ffe4e6 !important;
 }
 
-/* Ham Result */
+/* HAM RESULT */
 
 .ham-result {
-    background: #ecfdf5;
-    border: 1px solid #bbf7d0;
-    border-left: 7px solid #16a34a;
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(135deg, #064e3b, #065f46);
+    border: 1px solid #34d399;
+    border-left: 7px solid #10b981;
+    border-radius: 17px;
+    padding: 28px;
     text-align: center;
+    box-shadow: 0 0 25px rgba(16,185,129,0.2);
 }
 
 .ham-result h2,
 .ham-result p {
-    color: #166534 !important;
+    color: #d1fae5 !important;
 }
 
-/* Process Cards */
+/* PROCESS CARDS */
 
 .process-card {
-    background: white;
-    padding: 23px;
-    border-radius: 15px;
-    border: 1px solid #e2e8f0;
+    background: linear-gradient(145deg, #202b49, #29204a);
+    padding: 25px;
+    border-radius: 17px;
+    border: 1px solid #5541a5;
     text-align: center;
-    min-height: 165px;
-    box-shadow: 0 4px 14px rgba(30, 50, 100, 0.05);
+    min-height: 175px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .process-card h3 {
-    color: #3949ab !important;
+    color: #67e8f9 !important;
+}
+
+.process-card h4 {
+    color: #f8fafc !important;
 }
 
 .process-card p {
-    color: #475569 !important;
+    color: #cbd5e1 !important;
 }
 
-/* Footer */
+/* ABOUT PROJECT */
+
+[data-testid="stExpander"] {
+    background: #202b49;
+    border: 1px solid #5541a5;
+    border-radius: 12px;
+}
+
+[data-testid="stExpander"] summary {
+    color: #67e8f9 !important;
+}
+
+/* FOOTER */
 
 .footer {
-    background: #172554;
+    background: linear-gradient(120deg, #312e81, #581c87, #164e63);
     color: white;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
-    border-radius: 15px;
-    margin-top: 25px;
+    border-radius: 18px;
+    margin-top: 30px;
+    border: 1px solid #6366f1;
 }
 
 .footer h3,
@@ -237,8 +255,10 @@ div.stButton > button:hover {
     color: white !important;
 }
 
+/* DIVIDER */
+
 hr {
-    border-color: #dce3f0;
+    border-color: #475569;
 }
 
 </style>
@@ -461,7 +481,7 @@ st.divider()
 
 
 # ==========================================
-# PROJECT INFORMATION
+# ABOUT PROJECT
 # ==========================================
 
 with st.expander("ℹ️ About This Project"):
@@ -477,6 +497,7 @@ with st.expander("ℹ️ About This Project"):
     whether it belongs to the Spam or Ham category.
 
     **Technologies Used:**
+
     - Python
     - Streamlit
     - Scikit-learn
